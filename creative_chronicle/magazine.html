@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeChronicle - Chi Tiết Bài Viết</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <style>
+        /* === VÙNG 1: AUTHOR INFO (FLEXBOX) === */
+        .author-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .author-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* === VÙNG 2: MOSAIC GALLERY (CSS GRID) === */
+        .mosaic-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(2, 200px);
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .photo-main {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Responsive cho Mosaic Gallery ở màn hình Mobile (< 768px) */
+        @media (max-width: 767.98px) {
+            .mosaic-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .photo-main {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .gallery-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container my-5 bg-white p-4 p-md-5 rounded shadow-sm">
+
+        <!-- HEADER TẠP CHÍ -->
+        <header class="mb-4">
+            <span class="badge bg-danger text-uppercase mb-2">Nghệ Thuật & Bố Cục</span>
+            <h1 class="fw-bold display-5">Sự Sụp Đổ Của Float Và Kỷ Nguyên Mới Của CSS Grid</h1>
+        </header>
+
+        <!-- VÙNG 1: THANH THÔNG TIN TÁC GIẢ (FLEXBOX) -->
+        <div class="author-section">
+            <div class="author-profile">
+                <img src="https://picsum.photos/id/64/100/100" alt="Jane Doe" class="author-avatar">
+                <div>
+                    <h5 class="m-0 fw-bold">Jane Doe</h5>
+                    <small class="text-muted">Đăng ngày 25 Tháng 10, 2026</small>
+                </div>
+            </div>
+            <div class="share-buttons d-flex gap-2">
+                <button class="btn btn-outline-primary btn-sm rounded-pill"><i class="bi bi-facebook me-1"></i>Share Facebook</button>
+                <button class="btn btn-outline-info btn-sm rounded-pill"><i class="bi bi-twitter-x me-1"></i>Tweet</button>
+            </div>
+        </div>
+
+        <!-- VÙNG 2: THƯ VIỆN ẢNH KHẢM (CSS GRID MOSAIC GALLERY) -->
+        <div class="mosaic-gallery">
+            <div class="photo-main">
+                <img src="https://picsum.photos/id/1015/800/600" alt="Main Artwork" class="gallery-img">
+            </div>
+            <div class="photo-sub-1">
+                <img src="https://picsum.photos/id/1016/500/350" alt="Sub Artwork 1" class="gallery-img">
+            </div>
+            <div class="photo-sub-2">
+                <img src="https://picsum.photos/id/1018/500/350" alt="Sub Artwork 2" class="gallery-img">
+            </div>
+        </div>
+
+        <!-- NỘI DUNG BÀI VIẾT -->
+        <article class="lh-lg mb-5 text-secondary">
+            <p class="fs-5">Dàn trang hiện đại giúp nội dung tự do phát triển mà không sợ bị đè lấn. Nhờ CSS Grid và Flexbox, khu vực Mosaic Gallery phía trên giữ trọn chiều cao thực tế, đẩy đoạn văn bản này xuống một cách tự nhiên mà không cần đến kỹ thuật clearfix rườm rà.</p>
+        </article>
+
+        <!-- VÙNG 3: BÀI VIẾT ĐỀ XUẤT (BOOTSTRAP GRID SYSTEM) -->
+        <section class="border-top pt-4">
+            <h3 class="fw-bold mb-4">Bài Viết Đề Xuất</h3>
+            <div class="row g-4">
+                
+                <!-- Card 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://picsum.photos/id/180/400/250" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">Thiết Kế Đa Năng Cho Mobile</h6>
+                            <p class="card-text text-muted small">Khám phá các nguyên lý cơ bản của thiết kế đáp ứng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://picsum.photos/id/119/400/250" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">Sức Mạnh Của Typography</h6>
+                            <p class="card-text text-muted small">Nghệ thuật lựa chọn font chữ cho tạp chí trực tuyến.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://picsum.photos/id/201/400/250" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">Flexbox vs CSS Grid</h6>
+                            <p class="card-text text-muted small">Khi nào nên dùng 1D layout và khi nào nên dùng 2D layout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://picsum.photos/id/3/400/250" class="card-img-top" alt="Article 4">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">Màu Sắc Trong UI/UX</h6>
+                            <p class="card-text text-muted small">Cách phối màu tạo cảm xúc cho người đọc trực tuyến.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

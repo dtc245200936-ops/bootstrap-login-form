@@ -1,13 +1,13 @@
-# AI Prompt Log
+# AI Prompt Log - Tra Cứu CSS Grid & Bootstrap Utilities
 
-1. **Brainstorming Tool Selection:**
-   * *Prompt:* "Khi tôi cần một bố cục mà một phần tử con (Child) phải chiếm chính xác 2 hàng và 2 cột (span 2 rows, 2 columns) đan xen với các phần tử nhỏ khác, tôi nên chọn CSS Grid hay Flexbox? Tại sao Flexbox lại chật vật với yêu cầu này?"
-   * *Kết quả:* Nhận diện rõ giới hạn 1D của Flexbox và lợi thế 2D của Grid.
+## Prompt 1: Hỏi về CSS Grid Spanning
+* **User:** "Làm sao để tạo một CSS Grid gồm 2 cột, trong đó 1 ảnh bên trái chiếm toàn bộ chiều cao của 2 ảnh bên phải?"
+* **AI Output Summary:** Sử dụng `grid-template-columns: 2fr 1fr;` và cho ảnh chính dùng thuộc tính `grid-row: 1 / 3` (hoặc `grid-row: span 2`). Kết hợp `object-fit: cover` để ảnh không bị méo tỷ lệ.
 
-2. **Bootstrap Query:**
-   * *Prompt:* "Trong Bootstrap 5, sự khác biệt giữa lớp col-sm-4 và col-md-4 là gì? Tại sao tôi nên dùng Bootstrap thay vì tự viết CSS Grid cho một phần tử đơn giản như 3 cột Bảng giá?"
-   * *Kết quả:* Nắm được các breakpoint (`sm: >=576px`, `md: >=768px`) và tính tiện lợi của thuộc tính `gap` / system grid.
+## Prompt 2: Tra cứu Bootstrap Alignment & Spacing
+* **User:** "Thay vì viết CSS thủ công cho thanh Author Info, Bootstrap 5 có những Class Utility nào hỗ trợ Flexbox căn giữa và khoảng cách?"
+* **AI Output Summary:** Có thể dùng combo class `d-flex align-items-center justify-content-between flex-wrap gap-2` để thay thế hoàn toàn CSS căn chỉnh Float thủ công.
 
-3. **CSS Tuning:**
-   * *Prompt:* "Hãy cho tôi xem một cú pháp CSS Grid đơn giản sử dụng span để tạo layout Bento Box có 1 hình lớn 2x2 và các hình nhỏ xung quanh."
-   * *Kết quả:* Áp dụng thành công `grid-template-columns: repeat(3, 1fr)` kết hợp `span 2`.
+## Prompt 3: Cấu hình Breakpoints cho Bootstrap Grid
+* **User:** "Cấu hình class `col` như thế nào để 4 thẻ bài viết hiển thị 1 cột trên Mobile, 2 cột trên Tablet và 4 cột trên Desktop?"
+* **AI Output Summary:** Sử dụng chuỗi class: `col-12 col-md-6 col-lg-3`.
